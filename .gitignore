@@ -1,0 +1,26 @@
+# Archivos de configuración específicos del entorno
+.env
+
+# Archivos de base de datos
+*.sqlite
+*.db
+*.sql
+*.mwb
+
+# Archivos de registro
+*.log
+
+# Archivos generados automáticamente
+__pycache__/
+*.pyc
+
+# Archivos de entorno local
+venv/
+.vscode/
+.idea/
+
+# Dependencias y directorios de compilación
+node_modules/
+dist/
+
+script/

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container1">
+        <div class="row">
+            <div class="col-6">
+                <h2><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABSklEQVR4nO3XOy8FQRjG8V8jtAhBEI1LRaXiUyjoNHwJDaWCWtQaIqEiGlE4UbiEhIKCTqgkbpWQlU1G4hLn7K7DSniSt5q8z/wzz+zsDMnVgiXc4R4HWMAEhtCDKt+kVlwhKlFPOMMqpjGKftR+FWAxTLCGNlSjF8OYxDJO8FAE7hKzaMoCcBtM4hiKqQJdGMAY5rDzqj+u8wQ+H/TS/BV1Yj34xGA/DiDEF/tcyAkgs1f0D+CXR7COXdTnBbAdxo8SQGQCKGCzyHh9mDwJRDnjfKM6HAbzYzT4YYCkEJ8CbCX426WtnTQAhbwBco/gV2/CrRBRbp9hVKJp77sPoqhEUyHvoziN/gGiPx1BW56X0i5sZL2W35T5YdKcFmCpDE+zeNln0CiDOhI+Th9xihVMYQR9qMky6Xu1h5W4DrWPeYxjEN2oTOv6DA6A6LLPakOvAAAAAElFTkSuQmCC"> Inicia Sesión</h2>
+
+                {% with messages = get_flashed_messages(category_filter=['login']) %}
+                    {% if messages %}
+                        <div class="alert alert-danger">
+                            {% for message in messages %}
+                                <p>{{message}}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+
+                <form action="/login" method="post">
+                    <div class="form-group">
+                        <label for="email"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA1klEQVR4nNXUPU6CURCF4QcDCQWJMbGgo7KhoBAKOzsbOypLduASMFRuwS3QWVDY2FnxEWPvDr7KHZAbRoLhJwq3wJPM5ObMnTeZTDL8B3UzhxJPmaJMwE/UM0xaD5YvvKF1AKwVjMRS4BIz3OwBu47eq2AtEs7xggdUfgFKf+7ximZ4P4BJVTziGac7YA2MYxG1FX8N+K27GKO9oXaBKQYbasU2YFIH7+iveLf4QG9LT7ELmHSGCUYRk/DsC0w6iUUN4+1Q4F9ULNNRA8vcx6Gb+3wdt+bz1EcZ0vaz2AAAAABJRU5ErkJggg=="> E-mail</label>
+                        <input type="text" id="email" name="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAvUlEQVR4nO2VQQ5BMRCGvz12uA6OQFxFrHkHIo7gxRZH4bFlpMksbKjHlDTmS/5F0z+dv51JCk6GdIEC2AFn1RaYA53UxcdABcgDHYFRyuJXLbQAekBD1QeWuncBhimevdICkye+qXoOQNsyQHF38xgr9c4sA+z10PDsMQbqDYNpxkkPbb7gbak3tMwMUaXyR/nPAGKsfAN8igcQbwGGQ7gByhpr8yEsgXWNtXmAd/AA4i0g989IfhXA4RvcAEMeudcgqbSuAAAAAElFTkSuQmCC"> Contraseña</label>
+                        <input type="password" id="password" name="password" class="form-control">
+                    </div>
+                    <input type="submit" value="Iniciar Sesión" class="bn4">
+                </form>
+            </div>
+                <div class="col-6">
+                    <img src="{{ url_for('static', filename='image/WhatsApp_Image_2023-04-16_at_4.21.25_PM-removebg-preview.png') }}">
+                    <div>
+                <div class="dep">
+                    <p>Este software utiliza técnicas avanzadas de inteligencia artificial para analizar imágenes de mamografía y detectar posibles signos de cáncer de mama.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

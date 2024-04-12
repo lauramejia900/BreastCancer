@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style.css') }}">
+    <title>Resultados</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fondo">
+        <div class="container-fluid">
+            <img src="{{ url_for('static', filename='image/cancer-mama-removebg-preview.png') }}" class="image">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link color" aria-current="page" href="/paciente">Inicio</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link color" href="/cancer">Sobre el cáncer</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link color" href="/tratamiento">Tratamiento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color" href="/nosotros">Sobre nosotros</a>
+                    </li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+        <div>
+            <img src="{{ url_for('static', filename='image/cancer.jpg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/GettyImages-1138405349.jpg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images.jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/61fd0bc55a5b1.jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/cancer-mama.jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images (1).jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images (2).jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images (3).jpeg') }}" class="imagen4b ">
+        </div>
+        <div class="cont">
+            <div class="alert alert-light" role="alert">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABi0lEQVR4nM2VPU7DQBCFv9hASWqgJGdAFBBLENGCgItAg8Sf0gMxOUoQcAIqMH9lYkrIGaAKGvEKExKvF1mCJ0XrnczuG++8fYZ/gACIgBaQAH3gQ2OieKS8X2ENeAAegX1gAZgBJjXa/ED/3wMNn80ngDbQBdYLrtkAekAMhEUILoBLYNqnMr7yr7Q+l6gtgnFJNWBX4yiEIjrP60HX8QYvwEBHMw5VIB3Vo0BNdvUgLUBi2JQYvqkuEokLNWAHmHfkVYAnoJ4NxpJpmTgCTrOBO+k+D0vAnn727MIicJsN9HXB8tAAbtSTZgGSWeAtGzCrmCqwsOlBYvu9+76JL8kc8OrbE1+SHz05k9mVSXIMnGQDdblpWSQV4BlYHg4mctMySLZVdDBKor0c72qKYOAgqsrjVsZVEDtc2AVbd60vZm5SR3ZtFfmgKoJOkSJDfQ9SuakLFWBLR9TyPYWG7Nrc9FC6N6uwm2yjzc0ETUUmmlWfzYerNHmbm9rFMi8yC7LR5hY3mVre3+ITgRBe7t2eBcwAAAAASUVORK5CYII=">
+                Si bien nuestra plataforma, es una herramienta valiosa, es importante destacar que no reemplaza una evaluación médica profesional. Si obtienes resultados preocupantes o tienes dudas, te recomendamos que consultes a un médico especialista para obtener un diagnóstico definitivo
+            </div>
+            <h1>Resultados</h1>
+            {% if resultado == "M"%}
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC7UlEQVR4nO2ZWYiNYRjHf2M5luyTNQqTfUtIcSGjUBNZ4oIrN8qSJUukUZYLe5ZIlHEzd25EQrgwIzdcWENIJDN2Ius4euo/+jrOmfm+b95zzvfV+dVbp/d9nuf9P+ec7+l53w8KFIgdrYBdwAuNnZqLHYeBZMqwuVgxGqgDfgBjgXH6XKe12HBJv8Buz9wezVUDRcSAuRL8Gujkme8A1GhtDhEnATyS2CVp1pdq7UnUH/z1EnoPaJFmvTlwWzbriChdgY8SOa0Bu1LZfAZ6EEGOSuAZH7ZnZWs+kWIo8EtjmA/7QcBP4DcwkghxQd/w/gA+B+RzmYgwU4LeA8UB/DoDb+U7gzzTEngoMStC+K+U72OV7ryxWkIeKKmgWIm+qxiryBPF+juZiLIMNtc8DaO1JukoC/nXdMYhCbC+KhOp3W8mzmv9IDlmsKd8jnCQyBBP+R5ODjnn83zhNxHjiGwsdk6Yog0/Ad0dJmItzgfZTSfLWNN3R5ut8WEfJBFjrezuh6yCvlkesA0PmkjCcwxYRpawQ9IbbTLLp0/QRIzZsn0HdCEL7NMGVwL4hEnEuCj7vTimBPiuy4MxOUhklEq7lfiBOOS0hBwL6Bc2EeO4fGxvJ0z2nOh65jCRbirx5jcVB+X2loJtCOHflESMjY3cAfhmsQI9BVrnIZGEWvyktISiPfBKQeaFjNHURIz58q0FOhKCHQpQ1YSbwWpPEldDxiiShqQuwgPRz1Nu7d42SnfJA4I4ntI3UEF0OClNps0XE4A/wFegD9GhF/BFyUxqzLgZcEPG5Q4293PUDUK5Yt2U1owskqG9YWrrYGMXVctLG+CZYpnWtLQDXspoAW5wnYixULFq9KriP7bJ4LrDFzFVDspvKkXSaDG3py721sNtD/lEos94af0G9PUuVCjDSuJDpTSf8E7WH/r7Ex9KpNnuj/9R/5Bbyx4XSqX5uXdyc5oKE5exKfXcsVUdZjImoxbYIu0FChSgYf4CgiZjlUuB0gIAAAAASUVORK5CYII=" class="warn">
+                <div>
+                    <p>Con una probabilidad del 90% los resultados del software muestran <strong>cierta probabilidad de presencia de anomalías malignas.</strong> Te recomendamos que consultes a un médico especialista lo antes posible para realizar pruebas adicionales y obtener un diagnóstico preciso. Recuerda que la detección temprana aumenta las posibilidades de un tratamiento exitoso</p>
+                </div>
+              </div>
+            <img src="{{ url_for('static', filename='exam/'+user.exam) }}" class="exam">
+            <p>Una <strong>anomalía maligna</strong> en una mamografía se refiere a la presencia de una lesión sospechosa o cancerosa en los tejidos mamarios. Las anomalías malignas indican la posibilidad de la presencia de cáncer de mama y requieren una evaluación y seguimiento adicionales.</p>
+            {% elif resultado == "B" %}
+            <div class="alert alert-warning d-flex align-items-center" role="alert">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC7UlEQVR4nO2ZWYiNYRjHf2M5luyTNQqTfUtIcSGjUBNZ4oIrN8qSJUukUZYLe5ZIlHEzd25EQrgwIzdcWENIJDN2Ius4euo/+jrOmfm+b95zzvfV+dVbp/d9nuf9P+ec7+l53w8KFIgdrYBdwAuNnZqLHYeBZMqwuVgxGqgDfgBjgXH6XKe12HBJv8Buz9wezVUDRcSAuRL8Gujkme8A1GhtDhEnATyS2CVp1pdq7UnUH/z1EnoPaJFmvTlwWzbriChdgY8SOa0Bu1LZfAZ6EEGOSuAZH7ZnZWs+kWIo8EtjmA/7QcBP4DcwkghxQd/w/gA+B+RzmYgwU4LeA8UB/DoDb+U7gzzTEngoMStC+K+U72OV7ryxWkIeKKmgWIm+qxiryBPF+juZiLIMNtc8DaO1JukoC/nXdMYhCbC+KhOp3W8mzmv9IDlmsKd8jnCQyBBP+R5ODjnn83zhNxHjiGwsdk6Yog0/Ad0dJmItzgfZTSfLWNN3R5ut8WEfJBFjrezuh6yCvlkesA0PmkjCcwxYRpawQ9IbbTLLp0/QRIzZsn0HdCEL7NMGVwL4hEnEuCj7vTimBPiuy4MxOUhklEq7lfiBOOS0hBwL6Bc2EeO4fGxvJ0z2nOh65jCRbirx5jcVB+X2loJtCOHflESMjY3cAfhmsQI9BVrnIZGEWvyktISiPfBKQeaFjNHURIz58q0FOhKCHQpQ1YSbwWpPEldDxiiShqQuwgPRz1Nu7d42SnfJA4I4ntI3UEF0OClNps0XE4A/wFegD9GhF/BFyUxqzLgZcEPG5Q4293PUDUK5Yt2U1owskqG9YWrrYGMXVctLG+CZYpnWtLQDXspoAW5wnYixULFq9KriP7bJ4LrDFzFVDspvKkXSaDG3py721sNtD/lEos94af0G9PUuVCjDSuJDpTSf8E7WH/r7Ex9KpNnuj/9R/5Bbyx4XSqX5uXdyc5oKE5exKfXcsVUdZjImoxbYIu0FChSgYf4CgiZjlUuB0gIAAAAASUVORK5CYII=" class="warn">
+                <div>
+                    <p>Con una probabilidad del 90% los resultados del software muestran <strong>cierta probabilidad de presencia de anomalías Benignas.</strong> Te recomendamos que consultes a un médico especialista lo antes posible para realizar pruebas adicionales y obtener un diagnóstico preciso. Recuerda que la detección temprana aumenta las posibilidades de un tratamiento exitoso</p>
+                </div>
+              </div>
+            <img src="{{ url_for('static', filename='exam/'+user.exam) }}" class="exam">
+            <p>Una <strong>anomalía benigna</strong> en una mamografía se refiere a la presencia de una lesión o alteración en los tejidos mamarios que no indica la presencia de cáncer. Las anomalías benignas son comunes y, en la mayoría de los casos, no representan una amenaza para la salud.</p>
+            {% else %}
+            <div class="alert alert-primary d-flex align-items-center" role="alert">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAERUlEQVR4nO2aXYhVVRTHf6ONM4aaNuo4CRn4kmkiJqLgixSW4RdG0KQ9WKQpaToYgoKj+KLpQ5LYk2D05IM+mJZipBhSlIipqY2DD+YH2hcY6ExWIwv/J5Zzz/Wer3vOEP7hMGfO3nvttfdee63/2vvCQ/x/MQiYA2wG9gPngd+BTuAvvbcBnwNbVLeBHoI6YB5wEPgb6Ir53AEOAPOBPkUMoC/QAlxxSnUAh4G1mu1RWqVaPfb+jMrWA0e0UkF7k9WS54CmA+1OgRPAQmBgAllmWu8AZ5y8duAlqoh6YLvr8KQGVZOBbJMxCzgn2f8CH6vPTNEIHFcnt4EVwCNZd8I9E1wtB2F9fQMMc+VJVv0/PAVckGD7O47q4zngkp4mfXsbuAZMTLoSwSC+A4aQH5qA0Xp/3jmGBXEF1TtzskH0pxg8rRhkemxMIiDY2BdyXgmPwc5D7gZ6ERPT3cbOY0+UC7ZHpYdZxqP6PjxOsAtmwQJUEagBPpEOPwNP6PtbwI9RPWaLixPVcLFRsEY6/NnNIk7ru3mwissZ0A4zryLwqgLiPwqSHs2OzljMKYt5jnZkEbHjYiJw6wFm3cvRme6DvA8HVcm4U96wTXxZ/e+IYPp7ylUYJCrekZYKJIDFqB+k4KEKZtMkPS1APhZWYY4EfUW+6A3sU9/nIk5i4JanhRVuUaHlE3niQ/X7CzAyYpsP1KY1rDCYldnkh8UuKZsS07N1KaUuQZsKLbPLAy8q1TVX+0bMtmNdrCvBbyp8PIZt7wLeJD5ssv5QfxsSerguRf0SBMlM1Jz5FZfNLY2hxFDgotruShiv+qq9xZzUAzG8qwgclWJbanAshAjGRZ3bW6lNK8B82bq13fYAqm0z/6nqXY7DYkMwRHJuhBX+lGKzz9XsWPudZchmq8pvAs+SDqNd3CnB/pTud6qUNBl7u52ABETQIvJM0mOu66cEmzMIiJNcWvol0A+YrATNvi0jG6yXvE1hhbNVaKeFaWBmc9Xl+tfd/skKRyVzRljhQEcajUCmwUjnYu35IsMkrUGE0Z4B5SodUMeLMuhwmBjt2YzZ9BLpaJSqLF7POLGy2XuS7FAjWmI6vlYp0ATJzcv0PMxy1KRi4F6uyqcKPHwIQ61LcyNRonp3TLqSnoNV0um8LCcyxQ64zHiKxwTpYkH1hbiNt7mLF2OsRaHRufKtSQTUKaCZgO8LOsQe4A7Sv01zLTdYNhnQ7jxXptENol3/k/aip80JHJ/TnrioPo2Vj8hK8FBnZrbp3q90ZJkQtfJOHc6cMr/SsD3zkeNPp0TasrwMPePS563Vvqqe5kwtOMlYnCCzDCjMEkc7urQnY7vYNKvznqhCoECn6HWrEp8xUrSPngZ9s7J1wNfdfjBgF59L4wS7rAfUrOzyTsKfcOwTASzkJxzlfP5MHWd+pnz6V61Up97PKj3dpP1V1AXrQ1Bt3AVSX1y/4Zx+TQAAAABJRU5ErkJggg==" class="warn">                <div>
+                    <p>Con una probabilidad del 90% los resultados del software muestran que <strong>no hay indicios de cáncer</strong> en la detección realizada. Sin embargo, es importante mantener una buena atención médica y realizar exámenes de seguimiento según lo recomiende tu médico</p>
+                </div>
+              </div>
+            <img src="{{ url_for('static', filename='exam/'+user.exam) }}" class="exam">
+            {% endif %}
+            
+        </div>
+        <footer>
+            <div class="conti">
+                <img src="https://img.icons8.com/ios/20/null/instagram-new--v1.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/facebook--v1.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/twitter--v1.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/google-plus-circled.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/linkedin.png" class="icono"/>
+            </div>
+            <hr>
+            <div class="container3">
+                <p>&copy; 2023 Breast diagnosis | Todos los derechos reservados</p>
+            </div>
+        </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

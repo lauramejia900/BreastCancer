@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style.css') }}">
+    <title>Resultados</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fondo">
+        <div class="container-fluid">
+            <img src="{{ url_for('static', filename='image/cancer-mama-removebg-preview.png') }}" class="image">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="color" aria-current="page" href="/dashboard">Inicio</a>
+                </li>
+                <li class="nav-item">
+                <a class=" color" href="/pacientes">Pacientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="color" href="/nosotros2">Sobre nosotros</a>
+                </li>
+            </ul>
+            <a href="/logout" class="btn btn-danger b">Cerrar Sesión</a>
+            </div>
+        </div>
+        </nav>
+        <div>
+            <img src="{{ url_for('static', filename='image/cancer.jpg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/GettyImages-1138405349.jpg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images.jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/61fd0bc55a5b1.jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/cancer-mama.jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images (1).jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images (2).jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images (3).jpeg') }}" class="imagen4b ">
+        </div>
+        <div class="cont">
+            <h1>Resultados</h1>
+            {% if resultado == "M"%}
+            <p>Con una probabilidad del 90% los resultados del software muestran <strong>cierta probabilidad de presencia de anomalías malignas.</strong> Te recomendamos que consultes a un médico especialista lo antes posible para realizar pruebas adicionales y obtener un diagnóstico preciso. Recuerda que la detección temprana aumenta las posibilidades de un tratamiento exitoso</p>
+            <img src="{{ url_for('static', filename='exam/'+user.exam) }}" class="exam">
+            <p>Una <strong>anomalía maligna</strong> en una mamografía se refiere a la presencia de una lesión sospechosa o cancerosa en los tejidos mamarios. Las anomalías malignas indican la posibilidad de la presencia de cáncer de mama y requieren una evaluación y seguimiento adicionales.</p>
+            {% elif resultado == "B" %}
+            <p>Con una probabilidad del 90% los resultados del software muestran <strong>cierta probabilidad de presencia de anomalías Benignas.</strong> Te recomendamos que consultes a un médico especialista lo antes posible para realizar pruebas adicionales y obtener un diagnóstico preciso. Recuerda que la detección temprana aumenta las posibilidades de un tratamiento exitoso</p>
+            <img src="{{ url_for('static', filename='exam/'+user.exam) }}" class="exam">
+            <p>Una <strong>anomalía benigna</strong> en una mamografía se refiere a la presencia de una lesión o alteración en los tejidos mamarios que no indica la presencia de cáncer. Las anomalías benignas son comunes y, en la mayoría de los casos, no representan una amenaza para la salud.</p>
+            {% else %}
+            <p>Con una probabilidad del 90% los resultados del software muestran que <strong>no hay indicios de cáncer</strong> en la detección realizada. Sin embargo, es importante mantener una buena atención médica y realizar exámenes de seguimiento según lo recomiende tu médico</p>
+            <img src="{{ url_for('static', filename='exam/'+user.exam) }}" class="exam">
+            {% endif %}
+            
+        </div>
+        <footer>
+            <div class="conti">
+                <img src="https://img.icons8.com/ios/20/null/instagram-new--v1.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/facebook--v1.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/twitter--v1.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/google-plus-circled.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/linkedin.png" class="icono"/>
+            </div>
+            <hr>
+            <div class="container3">
+                <p>&copy; 2023 Breast diagnosis | Todos los derechos reservados</p>
+            </div>
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

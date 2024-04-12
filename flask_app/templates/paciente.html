@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/style.css') }}">
+    <title>Paciente</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fondo">
+        <div class="container-fluid">
+            <img src="{{ url_for('static', filename='image/cancer-mama-removebg-preview.png') }}" class="image">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link color" aria-current="page" href="/paciente">Inicio</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link color" href="/cancer">Sobre el cáncer</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link color" href="/tratamiento">Tratamiento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link color" href="/nosotros">Sobre nosotros</a>
+                    </li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+        <div>
+            <img src="{{ url_for('static', filename='image/cancer.jpg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/GettyImages-1138405349.jpg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images.jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/61fd0bc55a5b1.jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/cancer-mama.jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images (1).jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images (2).jpeg') }}" class="imagen3 ">
+            <img src="{{ url_for('static', filename='image/images (3).jpeg') }}" class="imagen4b ">
+        </div>
+        <div class="container1">
+            <div class="row">
+                <div class="col-4 mar">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAADx0lEQVR4nM2YV2gVQRSGv9gNCWKJGkWNGowP1kSxS2wBEZUoFpREbAFBhaigDwEFg/hgQ58ESyCIEkUCioXYFbGLDxYs6ItEsYCIBUWvDPwLw7C7uXtzb8yBw92d2Z397j8z55xdaJxlAm1ohjYfeAr8BX4Bl4BhNBNbC8R8/Acw8n/DZUkxD2gLUGVB3v9fYN2BEmC/BXPA6n9lta8H5gJtmwquE1DvM6WP1DcU+O7TfyYVMOnAVKDM8t0Ba874n5A+s4FWWeMsA0YBaYnCFQCvgXfAPctfhkDEGvAH1jjm+CtwUcpHsvZaRzuBlj7gicB9Alo4Yxmwa0B1VMBC4CPQKqC/AnimPxGPPwRmBIw1QhGgdRRAsz7u0DSWKYVzoty0HLgdAn9CIWZmEgAzBNg3WYDrgCKgo9aU2ZmHgQ3qPwLsAhbqTxwDtgE1QJemAqzVw/P1YGMHlVnO63wjMBlYAxQDpfqNB3AWcAt4o8zUJSrgGB2bGHYOGAycBdpp+j3AUYp5RvEFwLw4AIt84ukjN5qEAQ4BOlvneYI27Ug1VM2YMDIQyBZATgOABuJJQJiaEgRoYFY62WSxBVMW4EsVOvIC+ks0AzbgIuCLwo4LWBwEOETrqs7yk3p4pdNeZ/lpbaQ5Af21KiA8wFzVlOusZPBbvz+dWQud4mRbhiAqlFbTlcFuAH3Uts+9yQbM1/E97dxJwF0nP3u+xMpEQdd4flmbKsNKhUa9bsA3FSkTNN09wgA76LxMD+4KrAhYV/11T1bINZ4vcBSst9S7rr4LwF4/2W3ANO2+fkn2bCfV2epNCVPPBSxULRdLsn/VFC+Oqp4LmEprqZ1bbqlnQtdYqdczHsBshZPtjlda8pt1udXnGs83S6FhVtsmpb961Z87VRs2qJ4LmKeEX+P4MWUJtDmO+lzjebWySpHVVqWKvVwvYZ56oWvPDzBVVuKodzVe9VxAk/BfqDJ+rIheE0cVXSlFXjrtx1WpP3fUmxSvei5guvKgqUSmK+zk6zzMcxXj5jjtBT5rL5J6LmBrARU0wrtZY7fSjKxPVD0XcLxeoD43wvdYYxdZmcOkuytR1XMBk22lTsB+C+yIop4L2EvhIFH13gPTrLFnB2QWW+VIgOOSkNbKrbEnBlwzoLkADnLycUUib3Ul+hrgxcHGAq62xu6utlNAb2WYWFje9bPhWrRdFRZKG6jtwnyFz8chU255VqwoEekrV5q+590ERuvdItmepSBeb730RzJTSR9SII2lyD8oYLtfvSKZmeJUVNSR1pxn/wDIPwHUP34mRgAAAABJRU5ErkJggg=="> Formulario</h5>
+                        <p class="card-text">En el formulario, encontrarás campos donde puedes ingresar información relevante, como tu nombre, edad y correo electronico.</p>
+                        <p class="card-text">Asegúrate de proporcionar los detalles de manera precisa y completa, ya que esto nos ayudará a realizar una evaluación más precisa.</p>
+                        <a href="/formulario" class="btn   bn5">Ir al formulario</a>
+                    </div>
+                </div>
+                <div class="col-7 espacio">
+                    <h2 class="texto">Bienvenido a nuestra página web de detección de cáncer de mama Breast diagnosis</h2>
+                    <p>En esta página, los pacientes pueden realizar una detección de cáncer de mama de forma fácil y rápida. Para comenzar, simplemente complete nuestro formulario de detección de cáncer de mama y cargue una imagen de su mamografía.</p>
+                    <p>Nuestra página de detección de cáncer de mama es completamente segura y  esta protegida para garantizar la privacidad de sus datos. </p>
+                    <p>En Breast diagnosis, estamos comprometidos con la detección temprana del cáncer de mama y la atención médica de calidad para nuestros pacientes. Le invitamos a utilizar nuestro portal de detección de cáncer de mama para una detección rápida y precisa del cáncer de mama. ¡Comience hoy y cuide su salud mamaria!.</p>
+                    <p>Si bien nuestra plataforma es una herramienta valiosa, es importante destacar que no reemplaza una evaluación médica profesional. Si obtienes resultados preocupantes o tienes dudas, te recomendamos que consultes a un médico especialista para obtener un diagnóstico definitivo</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="conti">
+                <img src="https://img.icons8.com/ios/20/null/instagram-new--v1.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/facebook--v1.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/twitter--v1.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/google-plus-circled.png" class="icono"/>
+                <img src="https://img.icons8.com/ios/20/null/linkedin.png" class="icono"/>
+            </div>
+            <hr>
+            <div class="container3">
+                <p>&copy; 2023 Breast diagnosis | Todos los derechos reservados</p>
+            </div>
+        </footer>
+</body>
+</html>
